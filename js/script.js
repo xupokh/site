@@ -8,12 +8,15 @@ window.onload = function () {
         const background = document.querySelector('.images-parallax__background');
         const downtown = document.querySelector('.images-parallax__downtown');
         const highlight = document.querySelector('.images-parallax__highlight');
+        const right = document.querySelector('.images-parallax__right');
+        const left = document.querySelector('.images-parallax__left');
 
         const forBackground = 40;
         const forDowntown = 20;
         const forHighlight = 10;
-
-        const speed = 0.05;
+        const forRight = 15;
+        const forLeft = 30;
+        const speed = 0.15;
 
         let positionX = 0, positionY = 0;
         let coordXprocent = 0, coordYprocent = 0;
@@ -25,10 +28,12 @@ window.onload = function () {
             positionX = positionX + (distX * speed);
             positionY = positionY + (distY * speed);
 
-            background.style.cssText = `transform: translate(${positionX / forBackground}%,${positionY / forBackground}%);`;
-            downtown.style.cssText = `transform: translate(${positionX / forDowntown}%,${positionY / forDowntown}%);`;
-            highlight.style.cssText = `transform: translate(${positionX / forHighlight}%,${positionY / forHighlight}%);`;
-
+            background.style.cssText = `transform: translate(${positionX / forBackground * 3}%,${positionY / forBackground}%);`;
+            downtown.style.cssText = `transform: translate(${positionX / forDowntown * 5}%,${positionY / forDowntown}%);`;
+            highlight.style.cssText = `transform: translate(${positionX / forHighlight * 2}%,${positionY / forHighlight}%);`;
+            right.style.cssText = `transform: translate(${positionX / forRight * 2}%,${positionY / forRight}%);`;
+            left.style.cssText = `transform: translate(${positionX / forLeft * 2}%,${positionY / forLeft}%);`;
+            
             requestAnimationFrame(setMouseParallaxStyle);
 
         }
