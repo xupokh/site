@@ -1,0 +1,1 @@
+['teach',' JS'].forEach(alert);
